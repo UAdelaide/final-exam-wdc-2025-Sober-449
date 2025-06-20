@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Dog of the Day</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    body {
+      background-color: red;
+      font-family: Comic Sans MS;
+      text-align: center;
+      animation: bgflash 0.1s infinite;
+    }
+
+    @keyframes bgflash {
+      0%   { background-color: red; }
+      50%  { background-color: yellow; }
+      100% { background-color: red; }
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+      border: 5px dashed purple;
+      animation: spin 1s linear infinite;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      animation: spin 1s linear infinite;
+    }
+  </style>
 </head>
 <body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <img :src="dogImage" alt="">
+    <p>{{ description }}</p>
+    <button @click="fetchDog">Refresh Dog</button>
+  </div>
 
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          title: "🐶 THE DOG DOG",
+          dogImage: "",
+          description: "Welcome to my WebPage!",
+        };
+      },
+      mounted() {
+        this.fetchDog();
+      },
+      methods: {
+        fetchDog() {
+          fetch("https://dog.ceo/api/breeds/image/random")
+            .then(res => res.json())
+            .then(data => {
+              this.dogImage = data.message;
+            });
+        }
+      }
+    }).mount("#app");
+  </script>
 </body>
 </html>
