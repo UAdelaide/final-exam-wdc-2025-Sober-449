@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
     //If the user is not found,return error information
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
-    };
+    }
 
     //Information is saved, indicating that you have logged in
     req.session.user = rows[0];

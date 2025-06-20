@@ -3,6 +3,12 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+const session = require('express-session');
+app.use(session({
+  secret: 'supersecretkey',
+  resave: false,
+  saveUninitialized: true
+}));
 
 // Middleware
 app.use(express.json());
@@ -14,6 +20,7 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
+
 
 // Export the app instead of listening here
 module.exports = app;
