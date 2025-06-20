@@ -134,13 +134,15 @@
         }
       }
 
+
+      // 加载当前用户的狗列表
       async function loadMyDogs() {
-        try {
-          const res = await fetch('/api/walks/my-dogs');
-          myDogs.value = await res.json();
-        } catch (err) {
-          console.error('Failed to load dogs:', err);
-        }
+          try {
+            const res = await fetch('/api/walks/my-dogs');
+            myDogs.value = await res.json();
+          } catch (err) {
+            console.error('Failed to load dogs:', err);
+          }
       }
 
         onMounted(() => {
