@@ -120,6 +120,15 @@
           }
         }
 
+        async function logout() {
+        try {
+          await fetch('/api/users/logout', { method: 'POST' });
+          window.location.href = '/'; // 返回登录页面
+        } catch (err) {
+          alert('Logout failed');
+        }
+      }
+
         onMounted(() => {
           loadWalks();
         });
