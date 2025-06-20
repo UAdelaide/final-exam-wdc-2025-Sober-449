@@ -40,7 +40,7 @@
       methods: {
         //Request login
         async login() {
-          this.error = '';
+          this.error = '';// Clear previous error messages
           try {
             const res = await fetch('/api/users/login', {
               method: 'POST',
