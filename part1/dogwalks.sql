@@ -55,5 +55,6 @@ CREATE TABLE WalkRatings (
     aaaa
     bbb
     ccc
-    
+    bbbb
+
 );
