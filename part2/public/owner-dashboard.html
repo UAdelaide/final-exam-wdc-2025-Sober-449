@@ -123,7 +123,7 @@
         async function logout() {
         try {
           await fetch('/api/users/logout', { method: 'POST' });
-          window.location.href = '/'; // 返回登录页面
+          window.location.href = '/'; //return to the Login page
         } catch (err) {
           alert('Logout failed');
         }
