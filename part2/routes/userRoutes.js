@@ -37,7 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body; // use username password
+  const { username, password } = req.body; // Submit username and password to verify your login
 
   try {
     // Find the matching username and password (plain text) in the database
