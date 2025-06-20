@@ -59,9 +59,9 @@
             if (result.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';//Dog owners page
             } else if (result.user.role === 'walker') {
-              window.location.href = 'walker-dashboard.html';//
+              window.location.href = 'walker-dashboard.html';//Dog walkers page
             } else {
-              this.error = 'Unknown user role';
+              this.error = 'Unknown user role';// role error
             }
           } catch (err) {
             this.error = 'Network error';
