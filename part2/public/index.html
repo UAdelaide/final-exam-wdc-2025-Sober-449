@@ -57,9 +57,9 @@
             }
             // Redirect pages based on user identity
             if (result.user.role === 'owner') {
-              window.location.href = 'owner-dashboard.html';
+              window.location.href = 'owner-dashboard.html';//Dog owners page
             } else if (result.user.role === 'walker') {
-              window.location.href = 'walker-dashboard.html';
+              window.location.href = 'walker-dashboard.html';//
             } else {
               this.error = 'Unknown user role';
             }
