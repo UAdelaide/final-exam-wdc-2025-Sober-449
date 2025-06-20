@@ -135,7 +135,7 @@
       }
 
 
-      // 加载当前用户的狗列表
+      // Load the current user's dog list
       async function loadMyDogs() {
           try {
             const res = await fetch('/api/walks/my-dogs');
@@ -147,6 +147,7 @@
 
         onMounted(() => {
           loadWalks();
+          loadMyDogs();
         });
 
         return {
