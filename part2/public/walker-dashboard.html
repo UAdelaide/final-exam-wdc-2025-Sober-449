@@ -59,12 +59,12 @@
         }
 
         async function applyToWalk(requestId) {
-          const currentUser = await getCurrentUser();  // 👈 调用新方法获取当前登录用户
+          const currentUser = await getCurrentUser();//obtain current login user
           if (!currentUser) {
             error.value = 'User not logged in';
             return;
           }
-          
+
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
