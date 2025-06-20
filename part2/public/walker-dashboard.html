@@ -14,7 +14,7 @@
       <h1 class="text-success">Walker Dashboard</h1>
       <button class="btn btn-outline-danger" @click="logout">Logout</button>
     </div>
-    
+
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
@@ -81,6 +81,8 @@
         onMounted(() => {
           loadWalkRequests();
         });
+
+        
 
         return {
           walks,
